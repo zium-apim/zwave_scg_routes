@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: a-service
+          uri: http://localhost:8089
+          predicates:
+            - Path=/aservice/**
+          filters:
+            - RewritePath=/aservice/?(?<segment>.*), /oma/$\{segment}
+        - id: b-service
+          uri: http://httpbin.org:80
+          predicates:
+            - Path=/bservice/**
+          filters:
+            - RewritePath=/bservice/?(?<segment>.*), /anything/$\{segment}

@@ -14,3 +14,7 @@ spring:
             - Path=/bservice/**
           filters:
             - RewritePath=/bservice/?(?<segment>.*), /anything/$\{segment}
+        - id: aaaa
+          uri: http://httpbin.org
+          predicates:
+            - Path=/get

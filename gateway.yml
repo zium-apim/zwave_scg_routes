@@ -14,3 +14,10 @@ spring:
             - Path=/bservice/**
           filters:
             - RewritePath=/bservice/?(?<segment>.*), /anything/$\{segment}
+        - id: httpbin_json
+          uri: https://httpbin.org/
+          predicates:
+            - Path=/get
+          metadata:
+            connection-timeout: '300'
+            response-timeout: '300'

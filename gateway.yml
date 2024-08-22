@@ -18,3 +18,7 @@ spring:
           uri: http://httpbin.org
           predicates:
             - Path=/get
+        - id: httpbin_get
+          uri: http://httpbin.org
+          predicates:
+            - Path=/get

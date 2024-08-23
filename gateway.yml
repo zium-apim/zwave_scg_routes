@@ -21,3 +21,10 @@ spring:
           metadata:
             connection-timeout: '300'
             response-timeout: '300'
+        - id: httpbin_json_1
+          uri: https://httpbin.org/
+          predicates:
+            - Path=/json
+          metadata:
+            connection-timeout: '300'
+            response-timeout: '300'
